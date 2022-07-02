@@ -1,0 +1,30 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ConnectFour"
+             x:Class="ConnectFour.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="PlayerOneLight">#FF90EE90</Color>
+            <Color x:Key="PlayerTwoLight">#FFFFA07A</Color>
+            <Color x:Key="BoardLight">#FFADD8E6</Color>
+            <Color x:Key="PlayerOneDark">#FF006400</Color>
+            <Color x:Key="PlayerTwoDark">#FFE9967A</Color>
+            <Color x:Key="BoardDark">#FF00008B</Color>
+
+            <Color x:Key="TextLight">#FFA9A9A9</Color>
+            <Color x:Key="TextDark">#FFD3D3D3</Color>
+
+            <Color x:Key="ButtonLight">#FF90EE90</Color>
+            <Color x:Key="ButtonDark">#FF006400</Color>
+
+            <SolidColorBrush x:Key="PlayerOneLightBrush" Color="{StaticResource PlayerOneLight}"/>
+            <SolidColorBrush x:Key="PlayerTwoLightBrush" Color="{StaticResource PlayerTwoLight}"/>
+            <SolidColorBrush x:Key="BoardLightBrush" Color="{StaticResource BoardLight}"/>
+            <SolidColorBrush x:Key="PlayerOneDarkBrush" Color="{StaticResource PlayerOneDark}"/>
+            <SolidColorBrush x:Key="PlayerTwoDarkBrush" Color="{StaticResource PlayerTwoDark}"/>
+            <SolidColorBrush x:Key="BoardDarkBrush" Color="{StaticResource BoardDark}"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

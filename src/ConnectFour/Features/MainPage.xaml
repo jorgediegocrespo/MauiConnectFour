@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                      xmlns:base="clr-namespace:ConnectFour.Base"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                      xmlns:features="clr-namespace:ConnectFour.Features"
+                      xmlns:controls="clr-namespace:ConnectFour.Controls"
+                      xmlns:texts="clr-namespace:ConnectFour.Resources.Texts"
+                      x:Class="ConnectFour.Features.MainPage"
+                      x:DataType="features:MainViewModel" 
+                      x:TypeArguments="features:MainViewModel">
+
+    <Grid RowDefinitions="150,*,6*,100" Margin="0,0,0,-100" RowSpacing="0">
+
+        <Frame x:Name="frPlayers" BorderColor="Transparent" HasShadow="true" Margin="20" CornerRadius="20" ZIndex="0" >
+            <Frame.Shadow>
+                <Shadow Brush="Grey"
+                        Offset="10,10"
+                        Radius="20"
+                        Opacity="0.7" />
+            </Frame.Shadow>
+            <Grid 
+              ColumnDefinitions="*,*" 
+              RowDefinitions="*,50,*"
+                Padding="20,0">
+                <HorizontalStackLayout Grid.Column="0" Grid.Row="1"
+                                       Spacing="5"
+                                   HorizontalOptions="Start" VerticalOptions="Center">
+                    <Ellipse x:Name="circlePlayerOne" 
+                         HeightRequest="20" WidthRequest="20" 
+                         VerticalOptions="Center" Fill="grey" />
+                    <Label x:Name="lbPlayerOne" 
+                       Text="{x:Static texts:TextsResource.PlayerOne}" 
+                       VerticalOptions="Center" TextColor="{AppThemeBinding Light={StaticResource TextLight}, Dark={StaticResource TextDark}}" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Grid.Column="1" Grid.Row="1"
+                                       Spacing="5"
+                                   HorizontalOptions="End" VerticalOptions="Center">
+                    <Ellipse x:Name="circlePlayerTwo" 
+                         HeightRequest="20" WidthRequest="20"
+                         VerticalOptions="Center" Fill="grey" />
+                    <Label x:Name="lbPlayerTwo" 
+                       Text="{x:Static texts:TextsResource.PlayerTwo}" 
+                       VerticalOptions="Center" TextColor="{AppThemeBinding Light={StaticResource TextLight}, Dark={StaticResource TextDark}}" />
+                </HorizontalStackLayout>
+            </Grid>
+        </Frame>
+
+
+        <Frame x:Name="frWinner" BorderColor="Transparent" HasShadow="true" Margin="20" CornerRadius="20" ZIndex="0" >
+            <Frame.Shadow>
+                <Shadow Brush="Grey"
+                        Offset="10,10"
+                        Radius="20"
+                        Opacity="0.7" />
+            </Frame.Shadow>
+            <Grid RowDefinitions="*,50,*">
+                <Label x:Name="lbWinner" Grid.Row="1" Opacity="0"
+                       TextColor="{AppThemeBinding Light={StaticResource TextLight}, Dark={StaticResource TextDark}}" FontSize="Subtitle" 
+                       VerticalOptions="Center" HorizontalOptions="Center" />
+            </Grid>
+        </Frame>
+
+        <Grid x:Name="gridBoard" Margin="0" Padding="0" Grid.Row="2" 
+                  RowDefinitions="*,*,*,*,*,*" ColumnDefinitions="*,*,*,*,*,*,*" 
+                  ColumnSpacing="-1" RowSpacing="-1"
+                  ZIndex="2" />
+
+        <Button x:Name="btNewGame" Grid.Row="1" 
+                BackgroundColor="{AppThemeBinding Light={StaticResource ButtonLight}, Dark={StaticResource ButtonDark}}"
+                HeightRequest="50" CornerRadius="25" Padding="50,0"
+                Text="{x:Static texts:TextsResource.PlayAgain}" 
+                TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                IsVisible="false"
+                Opacity="0" Scale="0"
+                HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <ContentView x:Name="cvFooter" Grid.Row="3" 
+                     BackgroundColor="{AppThemeBinding Light={StaticResource BoardLight}, Dark={StaticResource BoardDark}}" 
+                     HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+    </Grid>
+
+</base:BaseContentPage>
